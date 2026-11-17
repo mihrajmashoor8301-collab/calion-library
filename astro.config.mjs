@@ -20,7 +20,8 @@ export default defineConfig({
           label: 'Overview',
           items: [
             { label: 'Library Introduction', link: '/' },
-            { label: 'Ecosystem Architecture', link: '/overview/ecosystem/' }
+            { label: 'Ecosystem Architecture', link: '/overview/ecosystem/' },
+            { label: 'Pentest Methodology & CVSS', link: '/overview/methodology/' }
           ]
         },
         {
@@ -36,12 +37,32 @@ export default defineConfig({
           items: [{ autogenerate: { directory: 'windows' } }]
         },
         {
+          label: 'Network Security & Traffic',
+          items: [{ autogenerate: { directory: 'network' } }]
+        },
+        {
           label: 'Web Application Security',
           items: [{ autogenerate: { directory: 'web' } }]
         },
         {
-          label: 'Network Security & Traffic',
-          items: [{ autogenerate: { directory: 'network' } }]
+          label: 'Credential Security',
+          items: [{ autogenerate: { directory: 'credentials' } }]
+        },
+        {
+          label: 'Exploitation & Post-Exploitation',
+          items: [{ autogenerate: { directory: 'exploitation' } }]
+        },
+        {
+          label: 'Binary Exploitation & Memory Safety',
+          items: [{ autogenerate: { directory: 'binary' } }]
+        },
+        {
+          label: 'Security Automation',
+          items: [{ autogenerate: { directory: 'automation' } }]
+        },
+        {
+          label: 'AI & LLM Security',
+          items: [{ autogenerate: { directory: 'ai-security' } }]
         },
         {
           label: 'Tools & Command Cheatsheets',
