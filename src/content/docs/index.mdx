@@ -1,0 +1,41 @@
+---
+title: CALION Library
+description: Searchable cybersecurity knowledge base, command cheat sheets, and technical reference manuals.
+template: splash
+hero:
+  tagline: High-performance, offline-ready technical documentation, penetration testing cheat sheets, and curated cybersecurity handbooks.
+  actions:
+    - text: Browse Cheatsheets
+      link: /tools/nmap-cheatsheet/
+      icon: right-arrow
+      variant: primary
+    - text: PDF Reference Center
+      link: /pdf-center/handbooks/
+      icon: document
+      variant: secondary
+---
+
+import { Card, CardGrid } from '@astrojs/starlight/components';
+
+## Knowledge Disciplines
+
+<CardGrid stagger>
+  <Card title="Reconnaissance & OSINT" icon="magnifier">
+    Passive information gathering, DNS enumeration, subdomain brute-forcing, WHOIS analysis, and asset discovery workflows.
+  </Card>
+  <Card title="Linux Security & PrivEsc" icon="linux">
+    SUID binaries, capabilities, sudo misconfigurations, kernel exploits, cron vulnerabilities, and automated enumeration.
+  </Card>
+  <Card title="Windows & Active Directory" icon="seti:windows">
+    NTFS access controls, Kerberos attacks (Roasting, Golden Tickets), token impersonation, and domain enumeration.
+  </Card>
+  <Card title="Web Application Security" icon="seti:html">
+    OWASP Top 10 vulnerabilities: SQL Injection, IDOR, Cross-Site Scripting (XSS), CSRF, JWT tampering, and SSRF.
+  </Card>
+  <Card title="Network Protocols & Traffic" icon="random">
+    TCP/IP stack, three-way handshakes, SMB/RPC enumeration, firewall bypass strategies, and packet inspection.
+  </Card>
+  <Card title="Curated PDF Handbooks" icon="document">
+    30 downloadable command manuals and chapter guides for Nmap, Metasploit, Searchsploit, and Linux basics.
+  </Card>
+</CardGrid>

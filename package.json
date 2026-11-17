@@ -1,0 +1,16 @@
+{
+  "name": "calion-library",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "CALION Library — High-performance searchable cybersecurity knowledge base, cheat sheets, and technical handbooks.",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview"
+  },
+  "dependencies": {
+    "@astrojs/starlight": "latest",
+    "astro": "latest"
+  }
+}

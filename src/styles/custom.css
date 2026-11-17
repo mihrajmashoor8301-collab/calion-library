@@ -1,0 +1,66 @@
+/* CALION Library - Cybersecurity Brand Theme Tokens */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap');
+
+:root {
+  --sl-font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --sl-font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+}
+
+:root[data-theme='dark'] {
+  --sl-color-accent-low: #064e3b;
+  --sl-color-accent: #10b981;
+  --sl-color-accent-high: #6ee7b7;
+  
+  --sl-color-white: #f8fafc;
+  --sl-color-gray-1: #e2e8f0;
+  --sl-color-gray-2: #cbd5e1;
+  --sl-color-gray-3: #94a3b8;
+  --sl-color-gray-4: #64748b;
+  --sl-color-gray-5: #334155;
+  --sl-color-gray-6: #1e293b;
+  --sl-color-gray-7: #0f172a;
+  
+  --sl-color-black: #0b0f17;
+  --sl-color-bg: #0b0f17;
+  --sl-color-bg-nav: #0f172a;
+  --sl-color-bg-sidebar: #0b0f17;
+  --sl-color-hairline-light: #1e293b;
+  --sl-color-hairline: #1e293b;
+}
+
+/* Terminal & Code Block Enhancements */
+pre {
+  border: 1px solid #1e293b !important;
+  border-radius: 8px !important;
+  background-color: #0d121d !important;
+}
+
+code {
+  font-family: var(--sl-font-mono) !important;
+}
+
+/* Badge & Tag Accents */
+.badge-cyber {
+  display: inline-block;
+  padding: 0.2rem 0.6rem;
+  font-family: var(--sl-font-mono);
+  font-size: 0.75rem;
+  font-weight: 600;
+  border-radius: 9999px;
+  border: 1px solid rgba(16, 185, 129, 0.3);
+  background-color: rgba(16, 185, 129, 0.1);
+  color: #34d399;
+}
+
+.badge-blue {
+  display: inline-block;
+  padding: 0.2rem 0.6rem;
+  font-family: var(--sl-font-mono);
+  font-size: 0.75rem;
+  font-weight: 600;
+  border-radius: 9999px;
+  border: 1px solid rgba(56, 189, 248, 0.3);
+  background-color: rgba(56, 189, 248, 0.1);
+  color: #38bdf8;
+}
