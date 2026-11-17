@@ -5,8 +5,9 @@ description: Downloadable technical chapters, master cheat sheets, and command r
 
 The CALION Library provides downloadable reference documents and cheat sheets compiled from *The Ethical Hacker's Command Handbook* series.
 
-> [!NOTE]
-> All reference documents listed here are curated open-educational materials and command references designed for offline study and rapid terminal lookup. No commercial third-party publications are redistributed through this repository.
+:::note[Open Educational Resource]
+All reference documents listed here are curated open-educational materials and command references designed for offline study and rapid terminal lookup. No commercial third-party publications are redistributed through this repository.
+:::
 
 ---
 

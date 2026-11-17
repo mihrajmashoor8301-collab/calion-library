@@ -64,3 +64,39 @@ code {
   background-color: rgba(56, 189, 248, 0.1);
   color: #38bdf8;
 }
+
+/* Responsive Tables & Overflow Protection */
+.sl-markdown-content table {
+  display: block;
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  border-collapse: collapse;
+  margin: 1.5rem 0;
+}
+
+.sl-markdown-content table th {
+  background-color: #162032;
+  color: #38bdf8;
+  font-weight: 600;
+  text-align: left;
+  padding: 0.75rem 1rem;
+  border: 1px solid #1e293b;
+}
+
+.sl-markdown-content table td {
+  padding: 0.75rem 1rem;
+  border: 1px solid #1e293b;
+  vertical-align: top;
+}
+
+.sl-markdown-content table tr:nth-child(even) {
+  background-color: rgba(15, 23, 42, 0.6);
+}
+
+/* Code block horizontal scroll & wrapping */
+.expressive-code pre {
+  max-width: 100%;
+  overflow-x: auto;
+}
+
