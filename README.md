@@ -17,7 +17,7 @@ Part of the **CALION Cybersecurity Ecosystem**:
 - **Deployment Target:** Cloudflare Pages (Static Edge Distribution)
 - **Search Engine:** Built-in Pagefind pre-indexed inverted search (sub-5ms keystroke search, offline capable)
 - **Database:** None (100% Jamstack static architecture)
-- **Theme:** Custom cybersecurity dark aesthetic with JetBrains Mono typography and responsive layout
+- **Theme:** CALION Academy light-by-default palette with saved light/dark preference, Space Grotesk headings, Inter body text, and JetBrains Mono references
 
 ---
 

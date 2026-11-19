@@ -1,0 +1,49 @@
+<button class="calion-theme-toggle" type="button" aria-label="Switch to dark theme" title="Switch theme" aria-pressed="false">
+  <svg class="theme-icon-light" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round">
+    <circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M2 12h2m16 0h2M4.93 19.07l1.42-1.42m11.3-11.3 1.42-1.42"/>
+  </svg>
+  <svg class="theme-icon-dark" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M20.5 14.2A8.7 8.7 0 0 1 9.8 3.5 8.8 8.8 0 1 0 20.5 14.2Z"/>
+  </svg>
+</button>
+
+<script>
+  const themeToggle = document.querySelector<HTMLButtonElement>('.calion-theme-toggle');
+
+  function syncThemeToggle() {
+    const isDark = document.documentElement.dataset.theme === 'dark';
+    themeToggle?.setAttribute('aria-label', isDark ? 'Switch to light theme' : 'Switch to dark theme');
+    themeToggle?.setAttribute('aria-pressed', String(isDark));
+  }
+
+  syncThemeToggle();
+  themeToggle?.addEventListener('click', () => {
+    const nextTheme = document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark';
+    document.documentElement.dataset.theme = nextTheme;
+    try {
+      localStorage.setItem('starlight-theme', nextTheme);
+    } catch (_) {}
+    syncThemeToggle();
+  });
+</script>
+
+<style>
+  .calion-theme-toggle {
+    display: inline-flex;
+    width: 2.5rem;
+    height: 2.5rem;
+    align-items: center;
+    justify-content: center;
+    color: var(--sl-color-gray-2);
+    background: var(--sl-color-bg-nav);
+    border: 1px solid var(--sl-color-gray-5);
+    border-radius: 0.75rem;
+    cursor: pointer;
+    transition: color 150ms ease, border-color 150ms ease, background-color 150ms ease;
+  }
+  .calion-theme-toggle:hover { color: var(--sl-color-text-accent); border-color: var(--sl-color-accent); }
+  .calion-theme-toggle svg { width: 1.15rem; height: 1.15rem; }
+  .theme-icon-dark { display: none; }
+  :global(html[data-theme='dark']) .theme-icon-light { display: none; }
+  :global(html[data-theme='dark']) .theme-icon-dark { display: block; }
+</style>

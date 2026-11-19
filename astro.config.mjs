@@ -6,8 +6,18 @@ export default defineConfig({
   integrations: [
     starlight({
       title: 'CALION Library',
-      description: 'Searchable cybersecurity notes, command cheat sheets, and technical reference manuals.',
+      description: 'A polished, searchable field library for cybersecurity concepts, tools, practical workflows, and offline reference.',
+      logo: {
+        dark: './src/assets/calion-mark-dark.svg',
+        light: './src/assets/calion-mark-light.svg',
+        alt: 'CALION logo'
+      },
       customCss: ['./src/styles/custom.css'],
+      components: {
+        Header: './src/components/LibraryHeader.astro',
+        ThemeProvider: './src/components/CalionThemeProvider.astro',
+        ThemeSelect: './src/components/CalionThemeSelect.astro'
+      },
       social: [
         {
           icon: 'github',
@@ -17,60 +27,46 @@ export default defineConfig({
       ],
       sidebar: [
         {
-          label: 'Overview',
+          label: 'Start here',
           items: [
-            { label: 'Library Introduction', link: '/' },
+            { label: 'Library Home', link: '/' },
             { label: 'Ecosystem Architecture', link: '/overview/ecosystem/' },
             { label: 'Pentest Methodology & CVSS', link: '/overview/methodology/' }
           ]
         },
         {
-          label: 'Reconnaissance & OSINT',
-          items: [{ autogenerate: { directory: 'recon' } }]
-        },
-        {
-          label: 'Linux Security & PrivEsc',
-          items: [{ autogenerate: { directory: 'linux' } }]
-        },
-        {
-          label: 'Windows & Active Directory',
-          items: [{ autogenerate: { directory: 'windows' } }]
-        },
-        {
-          label: 'Network Security & Traffic',
-          items: [{ autogenerate: { directory: 'network' } }]
-        },
-        {
-          label: 'Web Application Security',
-          items: [{ autogenerate: { directory: 'web' } }]
-        },
-        {
-          label: 'Credential Security',
-          items: [{ autogenerate: { directory: 'credentials' } }]
-        },
-        {
-          label: 'Exploitation & Post-Exploitation',
-          items: [{ autogenerate: { directory: 'exploitation' } }]
-        },
-        {
-          label: 'Binary Exploitation & Memory Safety',
-          items: [{ autogenerate: { directory: 'binary' } }]
-        },
-        {
-          label: 'Security Automation',
-          items: [{ autogenerate: { directory: 'automation' } }]
-        },
-        {
-          label: 'AI & LLM Security',
-          items: [{ autogenerate: { directory: 'ai-security' } }]
-        },
-        {
-          label: 'Tools & Command Cheatsheets',
-          items: [{ autogenerate: { directory: 'tools' } }]
-        },
-        {
-          label: 'PDF Reference Center',
+          label: 'Core systems',
+          collapsed: true,
           items: [
+            { autogenerate: { directory: 'linux' } },
+            { autogenerate: { directory: 'windows' } },
+            { autogenerate: { directory: 'network' } },
+            { autogenerate: { directory: 'credentials' } }
+          ]
+        },
+        {
+          label: 'Discovery & assessment',
+          collapsed: true,
+          items: [
+            { autogenerate: { directory: 'recon' } },
+            { autogenerate: { directory: 'web' } },
+            { autogenerate: { directory: 'exploitation' } },
+            { autogenerate: { directory: 'binary' } }
+          ]
+        },
+        {
+          label: 'Automation & emerging tech',
+          collapsed: true,
+          items: [
+            { autogenerate: { directory: 'automation' } },
+            { autogenerate: { directory: 'ai-security' } }
+          ]
+        },
+        {
+          label: 'Tools & reference',
+          collapsed: true,
+          items: [
+            { autogenerate: { directory: 'tools' } },
             { label: 'Curated PDF Handbooks', link: '/pdf-center/handbooks/' }
           ]
         }

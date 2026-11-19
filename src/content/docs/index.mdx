@@ -1,50 +1,51 @@
 ---
-title: CALION Library
-description: Searchable cybersecurity knowledge base, command cheat sheets, and technical reference manuals.
+title: Library
+description: Searchable cybersecurity field notes, practical tool guides, and carefully organized offline references from CALION.
 template: splash
 hero:
-  tagline: High-performance, offline-ready technical documentation, penetration testing cheat sheets, and curated cybersecurity handbooks.
+  title: CALION Library
+  tagline: A clear, searchable field library for cybersecurity concepts, practical workflows, tool references, and offline study.
   actions:
-    - text: Browse Cheatsheets
-      link: /tools/nmap-cheatsheet/
+    - text: Explore the library
+      link: /recon/passive-osint/
       icon: right-arrow
       variant: primary
-    - text: PDF Reference Center
+    - text: Open the reference desk
       link: /pdf-center/handbooks/
       icon: document
       variant: secondary
 ---
 
-import { Card, CardGrid } from '@astrojs/starlight/components';
+import { CardGrid, LinkCard } from '@astrojs/starlight/components';
 
-## Knowledge Disciplines
+<div className="library-home">
+  <section className="library-home-section" aria-labelledby="disciplines-heading">
+    <p className="library-section-kicker">Browse the collection</p>
+    <h2 className="library-section-heading" id="disciplines-heading">Find the right field notes</h2>
+    <p className="library-section-intro">Move from fundamentals to hands-on references. Each shelf groups related guides and gives you a useful starting point.</p>
 
-<CardGrid stagger>
-  <Card title="Reconnaissance & OSINT" icon="magnifier">
-    Passive information gathering, DNS enumeration, subdomain brute-forcing, WHOIS analysis, and asset discovery workflows.
-  </Card>
-  <Card title="Linux Security & PrivEsc" icon="linux">
-    SUID binaries, capabilities, sudo misconfigurations, kernel exploits, cron vulnerabilities, and automated enumeration.
-  </Card>
-  <Card title="Windows & Active Directory" icon="seti:windows">
-    NTFS access controls, Kerberos attacks (Roasting, Golden Tickets), token impersonation, and domain enumeration.
-  </Card>
-  <Card title="Web Application Security" icon="seti:html">
-    OWASP Top 10 vulnerabilities: SQL Injection, IDOR, Cross-Site Scripting (XSS), CSRF, JWT tampering, and SSRF.
-  </Card>
-  <Card title="Network Protocols & Traffic" icon="random">
-    TCP/IP stack, three-way handshakes, SMB/RPC enumeration, firewall bypass strategies, and packet inspection.
-  </Card>
-  <Card title="Credential Security & Hashing" icon="key">
-    Cryptographic hash identification, John the Ripper offline verification, and modern password storage standards.
-  </Card>
-  <Card title="Exploitation & Memory Safety" icon="warning">
-    Reverse vs bind shells, TTY terminal stabilization, buffer overflows, and binary mitigations (ASLR, NX, Canaries).
-  </Card>
-  <Card title="Security Automation & AI" icon="seti:python">
-    Lightweight Python network scripts, regex telemetry parsers, and local LLM security triage workflows.
-  </Card>
-  <Card title="Curated PDF Handbooks" icon="document">
-    30 downloadable command manuals and chapter guides for Nmap, Metasploit, Searchsploit, and Linux basics.
-  </Card>
-</CardGrid>
+    <CardGrid>
+      <LinkCard href="/recon/passive-osint/" title="Recon &amp; OSINT" description="Passive research, DNS fundamentals, public records, and responsible asset discovery." />
+      <LinkCard href="/linux/hardening/" title="Linux &amp; Windows" description="System hardening, permissions, identity, and practical host security references." />
+      <LinkCard href="/network/packet-analysis/" title="Networks &amp; protocols" description="Understand traffic, common services, ports, and the protocols behind them." />
+      <LinkCard href="/web/owasp-top-10/" title="Web application security" description="Structured references for common web risks, validation, and safer testing." />
+      <LinkCard href="/tools/tools-matrix/" title="Tools &amp; command guides" description="Quick-start notes and focused command references for common security tools." />
+      <LinkCard href="/automation/python-automation/" title="Automation &amp; AI" description="Small, understandable workflows for Python automation and security-focused AI." />
+    </CardGrid>
+  </section>
+
+  <section className="library-home-section" aria-labelledby="reference-heading">
+    <p className="library-section-kicker">Keep close at hand</p>
+    <h2 className="library-section-heading" id="reference-heading">The reference desk</h2>
+    <p className="library-section-intro">Fast lookup for repeat tasks, plus downloadable material for offline reading.</p>
+    <div className="library-quick-grid">
+      <LinkCard href="/tools/nmap-cheatsheet/" title="Nmap field guide" description="Scan planning, options, output, and responsible use." />
+      <LinkCard href="/tools/tools-matrix/" title="Tool index" description="Browse the collection by tool and job to be done." />
+      <LinkCard href="/pdf-center/handbooks/" title="Offline handbooks" description="Curated PDF references for study away from the browser." />
+    </div>
+  </section>
+
+  <aside className="library-home-callout">
+    <p><strong>Built for clear retrieval.</strong> Use search for a specific command or concept, or browse the grouped shelves when you are exploring a topic.</p>
+  </aside>
+</div>

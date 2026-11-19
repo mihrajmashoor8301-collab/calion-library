@@ -12,7 +12,7 @@ The CALION ecosystem comprises independent, specialized applications sharing a c
 | Application | Domain | Responsibility | Architecture |
 | :--- | :--- | :--- | :--- |
 | **CALION Landing Hub** | `endlessus.in` | Organizational portal & navigation hub | Static HTML5 / CDN |
-| **CALION Academy** | `learning.endlessus.in` | Interactive curriculum, 45 rooms, 13 practical labs, user accounts & XP | Vanilla JS + Dedicated Supabase DB |
+| **CALION Academy** | `learning.endlessus.in` | Interactive curriculum with 47 rooms across four independent learning paths, accounts, progress, and XP | Vanilla JS + Dedicated Supabase DB |
 | **CALION Library** | `notes.endlessus.in` | Searchable knowledge base, command cheatsheets, and PDF reference center | Astro + Starlight (Static Edge) |
 | **CALION Tools** | `tools.endlessus.in` | Sandboxed client-side utilities, encoders, CIDR calculator, hash analyzer | Zero-Telemetry Client JS |
 | **Developer Portfolio** | `portfolio.endlessus.in`| Independent professional bio, credentials & research | Static Portfolio Engine |

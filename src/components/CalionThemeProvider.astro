@@ -1,0 +1,10 @@
+{/* Set a stable light default before first paint; preserve an explicit saved choice. */}
+<script is:inline>
+  (() => {
+    let storedTheme = null;
+    try {
+      storedTheme = localStorage.getItem('starlight-theme');
+    } catch (_) {}
+    document.documentElement.dataset.theme = storedTheme === 'dark' ? 'dark' : 'light';
+  })();
+</script>

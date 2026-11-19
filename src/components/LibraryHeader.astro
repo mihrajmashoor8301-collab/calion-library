@@ -1,0 +1,88 @@
+---
+import config from 'virtual:starlight/user-config';
+import LanguageSelect from 'virtual:starlight/components/LanguageSelect';
+import Search from 'virtual:starlight/components/Search';
+import SiteTitle from 'virtual:starlight/components/SiteTitle';
+import SocialIcons from 'virtual:starlight/components/SocialIcons';
+import ThemeSelect from 'virtual:starlight/components/ThemeSelect';
+
+const shouldRenderSearch = config.pagefind || config.components.Search !== '@astrojs/starlight/components/Search.astro';
+---
+
+<div class="header library-header">
+  <div class="title-wrapper sl-flex"><SiteTitle /></div>
+  <div class="sl-flex library-search">{shouldRenderSearch && <Search />}</div>
+  <nav class="library-platform-nav sl-flex" aria-label="CALION platforms">
+    <a href="https://learning.endlessus.in/learning">Academy</a>
+    <a href="https://tools.endlessus.in/">Tools</a>
+    <a href="https://payloads.endlessus.in/">Payload Hub</a>
+  </nav>
+  <div class="library-header-controls sl-flex print:hidden">
+    <div class="social-icons sl-flex"><SocialIcons /></div>
+    <ThemeSelect />
+    <LanguageSelect />
+  </div>
+</div>
+
+<style>
+  .library-header {
+    width: 100%;
+    min-width: 0;
+    display: grid;
+    grid-template-columns: minmax(12rem, 1fr) minmax(15rem, 25rem) auto auto;
+    align-items: center;
+    gap: 1.25rem;
+  }
+
+  .title-wrapper { min-width: 0; overflow: hidden; }
+  .library-search { min-width: 0; }
+  .library-platform-nav,
+  .library-header-controls { align-items: center; gap: 1rem; }
+
+  .library-platform-nav a {
+    color: var(--sl-color-gray-2);
+    font-size: var(--sl-text-sm);
+    font-weight: 600;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: color 150ms ease;
+  }
+
+  .library-platform-nav a:hover { color: var(--sl-color-text-accent); }
+
+  .social-icons::after {
+    content: '';
+    height: 1.5rem;
+    border-inline-end: 1px solid var(--sl-color-gray-5);
+    margin-inline-start: 0.25rem;
+  }
+
+  @media (max-width: 75rem) {
+    .library-header { grid-template-columns: minmax(10rem, 1fr) minmax(12rem, 1.4fr) auto; }
+    .library-platform-nav { display: none; }
+  }
+
+  @media (max-width: 50rem) {
+    .library-header { display: flex; gap: 0.65rem; }
+    .title-wrapper { flex: 0 1 auto; }
+    .library-search { flex: 1 1 auto; justify-content: flex-end; }
+    :global(html[data-has-sidebar]) .library-search {
+      position: fixed;
+      top: calc((var(--sl-nav-height) - 2.5rem) / 2);
+      right: calc(2 * var(--sl-nav-pad-x) + var(--sl-menu-button-size) + 3rem);
+      z-index: var(--sl-z-index-navbar);
+      width: 2.5rem;
+      justify-content: center;
+    }
+    .library-header-controls {
+      display: flex;
+      position: fixed;
+      top: calc((var(--sl-nav-height) - 2.5rem) / 2);
+      right: calc(2 * var(--sl-nav-pad-x) + var(--sl-menu-button-size));
+      z-index: var(--sl-z-index-navbar);
+      gap: 0;
+    }
+    .library-header-controls .social-icons,
+    .library-header-controls :global(starlight-language-select) { display: none; }
+  }
+</style>
